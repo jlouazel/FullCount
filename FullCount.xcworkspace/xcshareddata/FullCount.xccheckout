@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDESourceControlProjectFavoriteDictionaryKey</key>
+	<false/>
+	<key>IDESourceControlProjectIdentifier</key>
+	<string>59ED6CFA-2E05-46DE-900C-03926426CA79</string>
+	<key>IDESourceControlProjectName</key>
+	<string>FullCount</string>
+	<key>IDESourceControlProjectOriginsDictionary</key>
+	<dict>
+		<key>6C3640CBA175CD0FB2005C0ACCD0AE2EFB0D1707</key>
+		<string>github.com:jlouazel/FullCount.git</string>
+	</dict>
+	<key>IDESourceControlProjectPath</key>
+	<string>FullCount.xcworkspace</string>
+	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
+	<dict>
+		<key>6C3640CBA175CD0FB2005C0ACCD0AE2EFB0D1707</key>
+		<string>..</string>
+	</dict>
+	<key>IDESourceControlProjectURL</key>
+	<string>github.com:jlouazel/FullCount.git</string>
+	<key>IDESourceControlProjectVersion</key>
+	<integer>111</integer>
+	<key>IDESourceControlProjectWCCIdentifier</key>
+	<string>6C3640CBA175CD0FB2005C0ACCD0AE2EFB0D1707</string>
+	<key>IDESourceControlProjectWCConfigurations</key>
+	<array>
+		<dict>
+			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
+			<string>public.vcs.git</string>
+			<key>IDESourceControlWCCIdentifierKey</key>
+			<string>6C3640CBA175CD0FB2005C0ACCD0AE2EFB0D1707</string>
+			<key>IDESourceControlWCCName</key>
+			<string>FullCount</string>
+		</dict>
+	</array>
+</dict>
+</plist>
