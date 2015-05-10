@@ -413,6 +413,7 @@
 				311216931AFED8EC00024D41 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		311216941AFED8EC00024D41 /* Build configuration list for PBXNativeTarget "FullCountTests" */ = {
 			isa = XCConfigurationList;
@@ -421,6 +422,7 @@
 				311216961AFED8EC00024D41 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 
