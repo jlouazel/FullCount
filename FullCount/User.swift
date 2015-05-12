@@ -40,6 +40,7 @@ class User: NSObject, NSCoding, Mappable {
 	var username: String?
 	var team: Team?
 	var games: NSArray = NSArray()
+	var favorites: [User]?
 	
 	override init() {}
 	
@@ -52,19 +53,20 @@ class User: NSObject, NSCoding, Mappable {
 		self.username  = aDecoder.decodeObjectForKey("username") as? String
 		self.team = aDecoder.decodeObjectForKey("team") as? Team
 		self.games = aDecoder.decodeObjectForKey("team.games") as! NSArray
+		self.favorites = aDecoder.decodeObjectForKey("favorites") as? [User]
 	}
 	
 	func encodeWithCoder(aCoder: NSCoder) {
 		aCoder.encodeObject(self.username, forKey: "username")
 		aCoder.encodeObject(self.team, forKey: "team")
 		aCoder.encodeObject(self.games, forKey: "team.games")
-//		aCoder.encodeObject(self.teamName, forKey: "")
+		aCoder.encodeObject(self.favorites, forKey: "favorites")
 	}
 	
 	func mapping(map: Map) {
 		username    <- map["username"]
 		team		<- map["team"]
-//		teamName	<- map["team.name"]
+		favorites	<- map["favorites"]
 		games		<- map["team.games"]
 	}
 	

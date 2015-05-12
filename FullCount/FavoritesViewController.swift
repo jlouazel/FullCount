@@ -8,9 +8,17 @@
 
 import UIKit
 
-class FavoritesViewController: UIViewController {
+class FavoritesViewController: UIViewController, UICollectionViewDelegate, UICollectionViewDataSource {
+	
+	let prefs:NSUserDefaults = NSUserDefaults.standardUserDefaults()
+	var user: User!
+	
+	var favoritesItems: NSMutableArray! = NSMutableArray()
 	
 	@IBOutlet weak var menuButton: UIBarButtonItem!
+	
+	@IBOutlet weak var favoritesCollectionView: UICollectionView!
+	
 	
 	override func viewDidLoad() {
 		super.viewDidLoad()
@@ -20,6 +28,11 @@ class FavoritesViewController: UIViewController {
 			menuButton.action = "revealToggle:"
 			self.view.addGestureRecognizer(self.revealViewController().panGestureRecognizer())
 		}
+		
+		var data = self.prefs.dataForKey("user")!
+		user = NSKeyedUnarchiver.unarchiveObjectWithData(data) as? User
+		
+		println(user.favorites?[0].username)
 	}
 	
 	override func didReceiveMemoryWarning() {
@@ -29,5 +42,19 @@ class FavoritesViewController: UIViewController {
 	
 	override func viewDidAppear(animated: Bool) {
 		super.viewDidAppear(true)
+	}
+	
+	
+	func collectionView(collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+		return user.favorites!.count
+	}
+ 
+	//3
+	func collectionView(collectionView: UICollectionView, cellForItemAtIndexPath indexPath: NSIndexPath) -> UICollectionViewCell {
+		let cell = collectionView.dequeueReusableCellWithReuseIdentifier("FavoritesCollectionViewCell", forIndexPath: indexPath) as! FavoritesCollectionViewCell
+		
+		cell.userNameLabel.text = user.favorites?[indexPath.row].username
+		// Configure the cell
+		return cell
 	}
 }
