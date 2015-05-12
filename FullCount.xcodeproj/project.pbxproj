@@ -15,6 +15,10 @@
 		311216821AFED8EC00024D41 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 311216801AFED8EC00024D41 /* LaunchScreen.xib */; };
 		3112168E1AFED8EC00024D41 /* FullCountTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3112168D1AFED8EC00024D41 /* FullCountTests.swift */; };
 		317A8D191B01346F00A1BBB0 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 317A8D181B01346F00A1BBB0 /* User.swift */; };
+		317A8D1D1B01888800A1BBB0 /* TeamViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 317A8D1C1B01888800A1BBB0 /* TeamViewController.swift */; };
+		317A8D1F1B018B8600A1BBB0 /* GameCreationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 317A8D1E1B018B8600A1BBB0 /* GameCreationViewController.swift */; };
+		317A8D211B018CBD00A1BBB0 /* FavoritesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 317A8D201B018CBD00A1BBB0 /* FavoritesViewController.swift */; };
+		317A8D231B018E6800A1BBB0 /* PlayerCardViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 317A8D221B018E6800A1BBB0 /* PlayerCardViewController.swift */; };
 		31A849541AFF45B500AF2EF7 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31A849531AFF45B500AF2EF7 /* LoginViewController.swift */; };
 		31ACC3AA1AFEDACA0078736F /* MenuController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31ACC3A91AFEDACA0078736F /* MenuController.swift */; };
 		31ACC3AF1AFEDB570078736F /* SWRevealViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 31ACC3AE1AFEDB570078736F /* SWRevealViewController.m */; };
@@ -46,6 +50,10 @@
 		3112168C1AFED8EC00024D41 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		3112168D1AFED8EC00024D41 /* FullCountTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FullCountTests.swift; sourceTree = "<group>"; };
 		317A8D181B01346F00A1BBB0 /* User.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
+		317A8D1C1B01888800A1BBB0 /* TeamViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TeamViewController.swift; sourceTree = "<group>"; };
+		317A8D1E1B018B8600A1BBB0 /* GameCreationViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GameCreationViewController.swift; sourceTree = "<group>"; };
+		317A8D201B018CBD00A1BBB0 /* FavoritesViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FavoritesViewController.swift; sourceTree = "<group>"; };
+		317A8D221B018E6800A1BBB0 /* PlayerCardViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlayerCardViewController.swift; sourceTree = "<group>"; };
 		31A849531AFF45B500AF2EF7 /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		31ACC3A91AFEDACA0078736F /* MenuController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MenuController.swift; sourceTree = "<group>"; };
 		31ACC3AC1AFEDB560078736F /* FullCount-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "FullCount-Bridging-Header.h"; sourceTree = "<group>"; };
@@ -111,6 +119,10 @@
 				31ACC3B01AFEDFD00078736F /* HomeViewController.swift */,
 				31A849531AFF45B500AF2EF7 /* LoginViewController.swift */,
 				317A8D181B01346F00A1BBB0 /* User.swift */,
+				317A8D1C1B01888800A1BBB0 /* TeamViewController.swift */,
+				317A8D1E1B018B8600A1BBB0 /* GameCreationViewController.swift */,
+				317A8D201B018CBD00A1BBB0 /* FavoritesViewController.swift */,
+				317A8D221B018E6800A1BBB0 /* PlayerCardViewController.swift */,
 			);
 			path = FullCount;
 			sourceTree = "<group>";
@@ -318,14 +330,18 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				317A8D1F1B018B8600A1BBB0 /* GameCreationViewController.swift in Sources */,
 				31A849541AFF45B500AF2EF7 /* LoginViewController.swift in Sources */,
 				31ACC3AA1AFEDACA0078736F /* MenuController.swift in Sources */,
 				3112167A1AFED8EC00024D41 /* ViewController.swift in Sources */,
 				31ACC3B11AFEDFD00078736F /* HomeViewController.swift in Sources */,
 				317A8D191B01346F00A1BBB0 /* User.swift in Sources */,
+				317A8D211B018CBD00A1BBB0 /* FavoritesViewController.swift in Sources */,
 				31ACC3AF1AFEDB570078736F /* SWRevealViewController.m in Sources */,
 				311216781AFED8EC00024D41 /* FullCount.xcdatamodeld in Sources */,
+				317A8D1D1B01888800A1BBB0 /* TeamViewController.swift in Sources */,
 				311216751AFED8EC00024D41 /* AppDelegate.swift in Sources */,
+				317A8D231B018E6800A1BBB0 /* PlayerCardViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

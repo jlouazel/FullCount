@@ -16,15 +16,7 @@ class MenuController: UIViewController  {
         super.viewDidLoad()
 
 		var data = self.prefs.dataForKey("user")!
-
-        
 		var user = NSKeyedUnarchiver.unarchiveObjectWithData(data) as? User
-		
-		println(user?.username)
-//		var user = self.valueForKey("user") as? User
-		
-//		println(user?.username)
-//		var username = self.prefs.valueForKey("user:username") as? String
 		
 		usernameLabel.text = user?.username
     }
