@@ -32,7 +32,7 @@ class LoginViewController: UIViewController {
 				if (error != nil) {
 					println("Error: \(error)")
 				} else {
-					println(json)
+//					println(json)
 					
 					var user: User! = Mapper<User>().map(json)
 					println(user?.username)

@@ -11,6 +11,7 @@ import UIKit
 class MenuController: UIViewController  {
 	let prefs:NSUserDefaults = NSUserDefaults.standardUserDefaults()
 
+	@IBOutlet weak var profileImage: UIImageView!
 	@IBOutlet weak var usernameLabel: UILabel!
 	override func viewDidLoad() {
         super.viewDidLoad()
@@ -19,8 +20,14 @@ class MenuController: UIViewController  {
 		var user = NSKeyedUnarchiver.unarchiveObjectWithData(data) as? User
 		
 		usernameLabel.text = user?.username
+		
+		profileImage.layer.borderWidth = 1
+		profileImage.layer.masksToBounds = true
+		profileImage.layer.borderColor = UIColor.blackColor().CGColor
+		profileImage.layer.cornerRadius = profileImage.frame.height/2.9
+		profileImage.clipsToBounds = true
     }
-    
+	
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
     }
