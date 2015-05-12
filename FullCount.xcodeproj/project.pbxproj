@@ -14,6 +14,11 @@
 		3112167F1AFED8EC00024D41 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3112167E1AFED8EC00024D41 /* Images.xcassets */; };
 		311216821AFED8EC00024D41 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 311216801AFED8EC00024D41 /* LaunchScreen.xib */; };
 		3112168E1AFED8EC00024D41 /* FullCountTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3112168D1AFED8EC00024D41 /* FullCountTests.swift */; };
+		317A8D191B01346F00A1BBB0 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 317A8D181B01346F00A1BBB0 /* User.swift */; };
+		31A849541AFF45B500AF2EF7 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31A849531AFF45B500AF2EF7 /* LoginViewController.swift */; };
+		31ACC3AA1AFEDACA0078736F /* MenuController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31ACC3A91AFEDACA0078736F /* MenuController.swift */; };
+		31ACC3AF1AFEDB570078736F /* SWRevealViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 31ACC3AE1AFEDB570078736F /* SWRevealViewController.m */; };
+		31ACC3B11AFEDFD00078736F /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31ACC3B01AFEDFD00078736F /* HomeViewController.swift */; };
 		AD47D50AACB69F523C179C24 /* Pods.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0FE56B62C4694EDCDB49C914 /* Pods.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
 /* End PBXBuildFile section */
 
@@ -40,6 +45,13 @@
 		311216871AFED8EC00024D41 /* FullCountTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = FullCountTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		3112168C1AFED8EC00024D41 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		3112168D1AFED8EC00024D41 /* FullCountTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FullCountTests.swift; sourceTree = "<group>"; };
+		317A8D181B01346F00A1BBB0 /* User.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
+		31A849531AFF45B500AF2EF7 /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
+		31ACC3A91AFEDACA0078736F /* MenuController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MenuController.swift; sourceTree = "<group>"; };
+		31ACC3AC1AFEDB560078736F /* FullCount-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "FullCount-Bridging-Header.h"; sourceTree = "<group>"; };
+		31ACC3AD1AFEDB570078736F /* SWRevealViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SWRevealViewController.h; sourceTree = "<group>"; };
+		31ACC3AE1AFEDB570078736F /* SWRevealViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SWRevealViewController.m; sourceTree = "<group>"; };
+		31ACC3B01AFEDFD00078736F /* HomeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		500C190D346184A1B5E88E41 /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
 		8569828BA89086C168F54FF1 /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -73,6 +85,7 @@
 				BF2BB5BB74B1BE1FCDA59046 /* Frameworks */,
 			);
 			sourceTree = "<group>";
+			usesTabs = 1;
 		};
 		311216701AFED8EC00024D41 /* Products */ = {
 			isa = PBXGroup;
@@ -86,13 +99,18 @@
 		311216711AFED8EC00024D41 /* FullCount */ = {
 			isa = PBXGroup;
 			children = (
+				31ACC3AB1AFEDB270078736F /* SWRevealViewController */,
 				311216741AFED8EC00024D41 /* AppDelegate.swift */,
 				311216791AFED8EC00024D41 /* ViewController.swift */,
 				3112167B1AFED8EC00024D41 /* Main.storyboard */,
+				31ACC3A91AFEDACA0078736F /* MenuController.swift */,
 				3112167E1AFED8EC00024D41 /* Images.xcassets */,
 				311216801AFED8EC00024D41 /* LaunchScreen.xib */,
 				311216761AFED8EC00024D41 /* FullCount.xcdatamodeld */,
 				311216721AFED8EC00024D41 /* Supporting Files */,
+				31ACC3B01AFEDFD00078736F /* HomeViewController.swift */,
+				31A849531AFF45B500AF2EF7 /* LoginViewController.swift */,
+				317A8D181B01346F00A1BBB0 /* User.swift */,
 			);
 			path = FullCount;
 			sourceTree = "<group>";
@@ -120,6 +138,16 @@
 				3112168C1AFED8EC00024D41 /* Info.plist */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		31ACC3AB1AFEDB270078736F /* SWRevealViewController */ = {
+			isa = PBXGroup;
+			children = (
+				31ACC3AD1AFEDB570078736F /* SWRevealViewController.h */,
+				31ACC3AE1AFEDB570078736F /* SWRevealViewController.m */,
+				31ACC3AC1AFEDB560078736F /* FullCount-Bridging-Header.h */,
+			);
+			name = SWRevealViewController;
 			sourceTree = "<group>";
 		};
 		BF2BB5BB74B1BE1FCDA59046 /* Frameworks */ = {
@@ -290,7 +318,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				31A849541AFF45B500AF2EF7 /* LoginViewController.swift in Sources */,
+				31ACC3AA1AFEDACA0078736F /* MenuController.swift in Sources */,
 				3112167A1AFED8EC00024D41 /* ViewController.swift in Sources */,
+				31ACC3B11AFEDFD00078736F /* HomeViewController.swift in Sources */,
+				317A8D191B01346F00A1BBB0 /* User.swift in Sources */,
+				31ACC3AF1AFEDB570078736F /* SWRevealViewController.m in Sources */,
 				311216781AFED8EC00024D41 /* FullCount.xcdatamodeld in Sources */,
 				311216751AFED8EC00024D41 /* AppDelegate.swift in Sources */,
 			);
@@ -420,9 +453,13 @@
 			baseConfigurationReference = 8569828BA89086C168F54FF1 /* Pods.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				INFOPLIST_FILE = FullCount/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.3;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "FullCount/FullCount-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 			};
 			name = Debug;
 		};
@@ -431,9 +468,12 @@
 			baseConfigurationReference = 500C190D346184A1B5E88E41 /* Pods.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				INFOPLIST_FILE = FullCount/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.3;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "FullCount/FullCount-Bridging-Header.h";
 			};
 			name = Release;
 		};
