@@ -74,7 +74,7 @@ class HomeViewController: UIViewController, UITableViewDelegate, UITableViewData
 		var opponentScore: Int = user.games[indexPath.row]["opponentScore"] as! Int
 		
 		cell.teamScoreLabel.text = "\(teamScore)"
-		cell.teamNameLabel.text = user.games[indexPath.row]["opponent"] as? String
+		cell.teamNameLabel.text = user.team?.name
 		cell.opponentNameLabel.text = user.games[indexPath.row]["opponent"] as? String
 		cell.opponentScoreLabel.text = "\(opponentScore)"
 		return cell
