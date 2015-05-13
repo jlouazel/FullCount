@@ -12,6 +12,7 @@ import ObjectMapper
 class Team: NSObject, NSCoding, Mappable {
 	var city: String?
 	var name: String?
+	var roster: [User]?
 	
 	override init() {}
 	
@@ -23,16 +24,19 @@ class Team: NSObject, NSCoding, Mappable {
 	required init(coder aDecoder: NSCoder) {
 		self.city  = aDecoder.decodeObjectForKey("city") as? String
 		self.name  = aDecoder.decodeObjectForKey("name") as? String
+		self.roster  = aDecoder.decodeObjectForKey("roster") as? [User]
 	}
 	
 	func encodeWithCoder(aCoder: NSCoder) {
 		aCoder.encodeObject(self.city, forKey: "city")
 		aCoder.encodeObject(self.name, forKey: "name")
+		aCoder.encodeObject(self.roster, forKey: "roster")
 	}
 	
 	func mapping(map: Map) {
-		city <- map["city"]
-		name <- map["name"]
+		city	<- map["city"]
+		name	<- map["name"]
+		roster	<- map["roster"]
 	}
 }
 
@@ -41,6 +45,7 @@ class User: NSObject, NSCoding, Mappable {
 	var team: Team?
 	var games: NSArray = NSArray()
 	var favorites: [User]?
+	var name: String?
 	
 	override init() {}
 	
@@ -54,6 +59,7 @@ class User: NSObject, NSCoding, Mappable {
 		self.team = aDecoder.decodeObjectForKey("team") as? Team
 		self.games = aDecoder.decodeObjectForKey("team.games") as! NSArray
 		self.favorites = aDecoder.decodeObjectForKey("favorites") as? [User]
+		self.name = aDecoder.decodeObjectForKey("name") as? String
 	}
 	
 	func encodeWithCoder(aCoder: NSCoder) {
@@ -61,6 +67,7 @@ class User: NSObject, NSCoding, Mappable {
 		aCoder.encodeObject(self.team, forKey: "team")
 		aCoder.encodeObject(self.games, forKey: "team.games")
 		aCoder.encodeObject(self.favorites, forKey: "favorites")
+		aCoder.encodeObject(self.name, forKey: "name")
 	}
 	
 	func mapping(map: Map) {
@@ -68,6 +75,7 @@ class User: NSObject, NSCoding, Mappable {
 		team		<- map["team"]
 		favorites	<- map["favorites"]
 		games		<- map["team.games"]
+		name		<- map["name"]
 	}
 	
 }

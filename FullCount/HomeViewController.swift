@@ -16,8 +16,6 @@ class HomeViewController: UIViewController, UITableViewDelegate, UITableViewData
     @IBOutlet weak var menuButton: UIBarButtonItem!
 	@IBOutlet weak var teamName: UILabel!
 	@IBOutlet weak var cityName: UILabel!
-	
-	var items: [String] = ["We", "Heart", "Swift"]
 
 	
 	@IBOutlet weak var scoresTableView: UITableView!

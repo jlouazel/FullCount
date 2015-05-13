@@ -8,8 +8,18 @@
 
 import UIKit
 
-class TeamViewController: UIViewController {
+class TeamViewController: UIViewController, UIPickerViewDataSource, UIPickerViewDelegate {
 	@IBOutlet weak var menuButton: UIBarButtonItem!
+	var leagueCategories = [
+		"High School",
+		"Amateur",
+		"College",
+		"Town Team",
+		"Semi-Professional",
+		"Professional",
+		"Defunct",
+		"Other"
+	]
 	
 	
 	override func viewDidLoad() {
@@ -20,6 +30,7 @@ class TeamViewController: UIViewController {
 			menuButton.action = "revealToggle:"
 			self.view.addGestureRecognizer(self.revealViewController().panGestureRecognizer())
 		}
+		
 	}
 	
 	override func didReceiveMemoryWarning() {
@@ -29,5 +40,17 @@ class TeamViewController: UIViewController {
 	
 	override func viewDidAppear(animated: Bool) {
 		super.viewDidAppear(true)
+	}
+	
+	func numberOfComponentsInPickerView(pickerView: UIPickerView) -> Int {
+		return 1
+	}
+	
+	func pickerView(pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
+		return leagueCategories.count
+	}
+	
+	func pickerView(pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String! {
+		return leagueCategories[row]
 	}
 }
