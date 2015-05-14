@@ -8,15 +8,25 @@
 
 import UIKit
 
-class ScoreSheetHolderViewController: UIViewController {
-
-	var pageIndex: Int!
+class ScoreSheetHolderViewController: UIViewController,UITableViewDelegate, UITableViewDataSource {
+	let prefs:NSUserDefaults = NSUserDefaults.standardUserDefaults()
 	
-	@IBOutlet weak var testLabel: UILabel!
+	var pageIndex: Int!
+	var user: User!
+	var roster: [User]!
+	
+	@IBOutlet weak var scoreTableView: UITableView!
+	@IBOutlet weak var pageNameLabel: UILabel!
+	
 	override func viewDidLoad() {
 		super.viewDidLoad()
 		
+		pageNameLabel.text = "ROUND \(pageIndex + 1)"
 		
+		var data = self.prefs.dataForKey("user")!
+		user = NSKeyedUnarchiver.unarchiveObjectWithData(data) as? User
+		
+		roster = user.team!.roster!
 	}
 	
 	override func didReceiveMemoryWarning() {
@@ -26,5 +36,21 @@ class ScoreSheetHolderViewController: UIViewController {
 	
 	override func viewDidAppear(animated: Bool) {
 		super.viewDidAppear(true)
+	}
+	
+	func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+		return roster.count
+	}
+	
+	func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
+		let cell = tableView.dequeueReusableCellWithIdentifier("sheetTableViewCell") as! SheetTableViewCell
+
+		cell.userNameLabel.text = roster[indexPath.row].name
+		
+		return cell
+	}
+	
+	func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
+		
 	}
 }

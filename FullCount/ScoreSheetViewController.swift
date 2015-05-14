@@ -10,13 +10,12 @@ import UIKit
 
 class ScoreSheetViewController: UIViewController, UIPageViewControllerDataSource {
 	
-	var test:NSArray!
+	let nbBatters: Int = 9
+	
 	var pageViewController: UIPageViewController!
 	
 	override func viewDidLoad() {
 		super.viewDidLoad()
-		
-		test = NSArray(objects: "plop", "trou", "bite")
 		
 		self.pageViewController = self.storyboard?.instantiateViewControllerWithIdentifier("ScoreSheetPageViewController") as! UIPageViewController
 		
@@ -51,9 +50,7 @@ class ScoreSheetViewController: UIViewController, UIPageViewControllerDataSource
 	{
 		
 		var pageContentViewController = self.storyboard?.instantiateViewControllerWithIdentifier("ScoreSheetHolderViewController") as! ScoreSheetHolderViewController
-		
-		
-		pageContentViewController.testLabel?.text = test[index] as? String
+
 		pageContentViewController.pageIndex = index
 		
 		
@@ -89,7 +86,7 @@ class ScoreSheetViewController: UIViewController, UIPageViewControllerDataSource
 		
 		index++
 		
-		if(index == test.count)
+		if(index == nbBatters)
 		{
 			return nil
 		}
@@ -99,7 +96,7 @@ class ScoreSheetViewController: UIViewController, UIPageViewControllerDataSource
 	
 	
 	func presentationCountForPageViewController(pageViewController: UIPageViewController) -> Int {
-		return test.count
+		return nbBatters
 	}
 	
 	func presentationIndexForPageViewController(pageViewController: UIPageViewController) -> Int {
