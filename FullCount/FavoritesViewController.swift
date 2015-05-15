@@ -31,8 +31,6 @@ class FavoritesViewController: UIViewController, UICollectionViewDelegate, UICol
 		
 		var data = self.prefs.dataForKey("user")!
 		user = NSKeyedUnarchiver.unarchiveObjectWithData(data) as? User
-		
-		println(user.favorites?[0].username)
 	}
 	
 	override func didReceiveMemoryWarning() {
@@ -49,12 +47,10 @@ class FavoritesViewController: UIViewController, UICollectionViewDelegate, UICol
 		return user.favorites!.count
 	}
  
-	//3
 	func collectionView(collectionView: UICollectionView, cellForItemAtIndexPath indexPath: NSIndexPath) -> UICollectionViewCell {
 		let cell = collectionView.dequeueReusableCellWithReuseIdentifier("FavoritesCollectionViewCell", forIndexPath: indexPath) as! FavoritesCollectionViewCell
 		
 		cell.userNameLabel.text = user.favorites?[indexPath.row].username
-		// Configure the cell
 		return cell
 	}
 }

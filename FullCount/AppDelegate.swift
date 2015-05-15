@@ -15,12 +15,21 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 	var window: UIWindow?
 	
 	
+	func application(application: UIApplication, openURL url: NSURL, sourceApplication: String?, annotation: AnyObject?) -> Bool {
+		var wasHandled:Bool = FBAppCall.handleOpenURL(url, sourceApplication: sourceApplication)
+		return wasHandled
+	}
+	
+	
 	func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
 		
 		
 		UIPageControl.appearance().pageIndicatorTintColor = UIColor.lightGrayColor()
 		UIPageControl.appearance().currentPageIndicatorTintColor = UIColor.redColor()
 		UINavigationBar.appearance().tintColor = UIColor.redColor()
+		
+		FBLoginView.self
+		FBProfilePictureView.self
 		
 		return true
 	}

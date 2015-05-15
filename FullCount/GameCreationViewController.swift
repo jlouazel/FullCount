@@ -32,7 +32,7 @@ class GameCreationViewController: UIViewController, UITableViewDelegate, UITable
 		var data = self.prefs.dataForKey("user")!
 		user = NSKeyedUnarchiver.unarchiveObjectWithData(data) as? User
 		
-		roster = user.team!.roster!
+		roster = user.team?.roster!
 	}
 	
 	override func didReceiveMemoryWarning() {

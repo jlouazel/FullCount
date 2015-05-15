@@ -9,6 +9,10 @@
 import UIKit
 
 class TeamViewController: UIViewController, UIPickerViewDataSource, UIPickerViewDelegate {
+	
+	let prefs:NSUserDefaults = NSUserDefaults.standardUserDefaults()
+	var user: User!
+	
 	@IBOutlet weak var menuButton: UIBarButtonItem!
 	var leagueCategories = [
 		"High School",
@@ -21,9 +25,16 @@ class TeamViewController: UIViewController, UIPickerViewDataSource, UIPickerView
 		"Other"
 	]
 	
+	@IBOutlet weak var teamNameLabel: UITextField!
+	@IBOutlet weak var cityNameLabel: UITextField!
+	@IBOutlet weak var leagueNameLabel: UITextField!
+	@IBOutlet weak var yearLabel: UITextField!
 	
 	override func viewDidLoad() {
 		super.viewDidLoad()
+		
+		var data = self.prefs.dataForKey("user")!
+		user = NSKeyedUnarchiver.unarchiveObjectWithData(data) as? User
 		
 		if self.revealViewController() != nil {
 			menuButton.target = self.revealViewController()
@@ -31,6 +42,13 @@ class TeamViewController: UIViewController, UIPickerViewDataSource, UIPickerView
 			self.view.addGestureRecognizer(self.revealViewController().panGestureRecognizer())
 		}
 		
+		var dateFormatter = NSDateFormatter()
+		dateFormatter.dateFormat = "YYYY"
+		let d = NSDate()
+		
+		teamNameLabel.text = user.team?.name
+		cityNameLabel.text = user.team?.city
+		yearLabel.text = dateFormatter.stringFromDate(d)
 	}
 	
 	override func didReceiveMemoryWarning() {

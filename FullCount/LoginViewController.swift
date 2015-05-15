@@ -20,7 +20,7 @@ class LoginViewController: UIViewController {
 	override func viewDidLoad() {
 		super.viewDidLoad()
 
-		self.activityIndicator.hidden = true
+		self.activityIndicator.hidesWhenStopped = true
 	}
 	
 	override func didReceiveMemoryWarning() {
@@ -29,7 +29,6 @@ class LoginViewController: UIViewController {
 	
 	
 	@IBAction func signinTapped(sender: UIButton) {
-		self.activityIndicator.hidden = false
 		self.activityIndicator.startAnimating()
 		Alamofire.request(.POST, "http://fullcountserver.herokuapp.com/api/users/login", parameters: ["email": emailField.text, "password": passwordField.text], encoding: .JSON)
 			.responseJSON { (request, response, json, error) in
@@ -37,7 +36,7 @@ class LoginViewController: UIViewController {
 					println("Error: \(error)")
 				} else {
 					var user: User! = Mapper<User>().map(json)
-					
+					self.activityIndicator.stopAnimating()
 					
 					let encodedObj = NSKeyedArchiver.archivedDataWithRootObject(user)
 					self.prefs.setObject(encodedObj, forKey: "user")
